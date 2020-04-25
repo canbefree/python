@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "active",
+            "type": "shell",
+            "command": "f:/project/python/venv/Scripts/Activate.ps1",
+        },
+        {
+            "label": "cd",
+            "type": "shell",
+            "command": "cd difa",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn":["active"]
+        },
+        {
+            "label": "crawl",
+            "type": "shell",
+            "command": "scrapy",
+            "args": [
+                "crawl",
+                "baidu"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn":["cd"]
+
+        }
+    ]
+}
