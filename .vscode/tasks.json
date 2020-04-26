@@ -4,25 +4,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "active",
-            "type": "shell",
-            "command": "f:/project/python/venv/Scripts/Activate.ps1",
-        },
-        {
-            "label": "cd",
-            "type": "shell",
-            "command": "cd difa",
-            "problemMatcher": [],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "dependsOn":["active"]
-        },
-        {
             "label": "crawl",
             "type": "shell",
-            "command": "scrapy",
+            "command": "${workspaceFolder}/venv/Scripts/scrapy.exe",
             "args": [
                 "crawl",
                 "baidu"
@@ -32,8 +16,9 @@
                 "kind": "test",
                 "isDefault": true
             },
-            "dependsOn":["cd"]
-
+            "options": {
+                "cwd": "${workspaceFolder}/difa"
+            }
         }
     ]
 }
